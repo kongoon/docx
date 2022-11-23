@@ -77,7 +77,7 @@ class Docx
 
 	private function addAltChunk($refID, $addPageBreak)
 	{
-		$pagebreak = $addPageBreak ? '<w:p><w:r><w:br w:type="page" /></w:r></w:p>' : '';
+		$pagebreak = $addPageBreak ? '<w:p><w:pPr><w:sectPr><w:type w:val="nextPage" /></w:sectPr></w:pPr></w:p>' : '';
 		$xmlItem = $pagebreak . '<w:altChunk r:id="' . $refID . '"/>';
 
 		$p = strpos($this->docxDocument, '</w:body>');
